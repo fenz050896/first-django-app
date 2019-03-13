@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h2>{% if pk %} Edit {% else %} New {% endif %} Post</h2>
+    <form method="post" class="post_form"> {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary save">Post</button>
+    </form>
+{% endblock %}
